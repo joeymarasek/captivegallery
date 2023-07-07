@@ -13,5 +13,11 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: captivegallery
 */
+/******************************
+ *  Header
+******************************/
+header svg {
+  height: 50px;
+}
 
 /*# sourceMappingURL=style.css.map */

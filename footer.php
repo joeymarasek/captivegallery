@@ -6,8 +6,6 @@
  * @package Captive Gallery
  */
 
-wp_footer();
-
 ?>
 
 <footer>
@@ -64,6 +62,8 @@ wp_footer();
 </div>
 
 </footer>
+
+<?php wp_footer(); ?>
 
 </body>
 

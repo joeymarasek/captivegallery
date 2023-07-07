@@ -12,9 +12,11 @@
 
 $roots_includes = array(
 
+    '/theme-functions/theme-enqueue.php',
     '/theme-functions/theme-supports.php',
     '/theme-functions/theme-menus.php',
     '/theme-functions/theme-widgets.php',
+    '/theme-functions/theme-options.php',
 
 );
   

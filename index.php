@@ -6,9 +6,10 @@
  * @package Captive Gallery
  */
 
+ get_header();
+
 ?>
 
-<?php get_header(); ?>
 <main class="wide">
 
     <section class="archive-section">
@@ -32,4 +33,5 @@
     </section>
 
 </main>
-<?php get_footer(); ?>
+
+<?php get_footer();

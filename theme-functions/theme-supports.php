@@ -13,7 +13,11 @@ function captive_theme_setup() {
     add_theme_support( 'menus' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'widgets' );
-    add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
+    add_theme_support( 'admin-bar', 
+        array( 
+            'callback' => '__return_false' 
+        ) 
+    );
 
 }
 
@@ -52,6 +56,5 @@ function fix_svg() {
 }
   
 add_action( 'admin_head', 'fix_svg' );
-
 
 ?>

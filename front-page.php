@@ -6,9 +6,10 @@
  * @package Captive Gallery
  */
 
+ get_header();
+
 ?>
 
-<?php get_header(); ?>
 <main class="home">
         
     <div class="swiper mySwiper">
@@ -55,23 +56,4 @@
 
 </main>
 
-<script>
-
-    var swiper = new 
-        Swiper(".mySwiper", {
-            effect: 'fade',
-            freeMode: {
-                enabled: true,
-            },
-            autoplay: {
-                delay: 1000,
-            },
-            slidesPerView: 1,
-            loop: true,
-            mousewheel: true,
-        }
-    );
-
-</script>
-
-<?php get_footer(); ?>
+<?php get_footer();
