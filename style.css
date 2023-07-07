@@ -16,8 +16,17 @@ Text Domain: captivegallery
 /******************************
  *  Header
 ******************************/
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+}
 header svg {
-  height: 50px;
+  max-height: 50px;
+  width: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
