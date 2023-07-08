@@ -14,19 +14,645 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: captivegallery
 */
 /******************************
- *  Header
+ *  Global Styles
 ******************************/
-body {
-  font-family: "Montserrat", sans-serif;
+/** Colors **/
+/** Fonts **/
+/** Borders **/
+/** Padding **/
+/********************
+    SCROLLBAR
+********************/
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 5px;
 }
 
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8e2dd;
+  height: 100%;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bcc6bc;
+}
+
+/********************
+      MAIN
+********************/
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0;
+  text-rendering: optimizeSpeed;
+}
+
+/********************
+    FONTS
+********************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  margin: 0;
+}
+
+p {
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.hero-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.9375rem, 3.3864rem + 2.7557vw, 10rem);
+  font-weight: 300;
+  line-height: 1.2;
+  text-shadow: 3px 3px 10px white;
+}
+
+.big-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(4.375rem, 4.0909rem + 1.4205vw, 7.5rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.primary {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.1875rem, 2.017rem + 0.8523vw, 4.0625rem);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.secondary {
+  font-size: clamp(1.3125rem, 1.2273rem + 0.4261vw, 2.25rem);
+  font-weight: 500;
+}
+
+.small-title {
+  font-weight: 400;
+  font-size: 1.3em;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+}
+
+.info-title {
+  color: #b8b2ad;
+  font-size: clamp(0.875rem, 0.8523rem + 0.1136vw, 1.125rem);
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.accent {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+a {
+  color: #879487;
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  color: black;
+}
+
+.black-link {
+  color: black;
+}
+.black-link:hover {
+  color: #879487;
+}
+
+.green {
+  color: #879487;
+  text-shadow: 3px 3px 10px #879487;
+}
+
+/********************
+    LISTS
+********************/
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+ul li,
+ol li {
+  line-height: 1.5;
+}
+
+.two-col-list {
+  columns: 2;
+  width: 100%;
+}
+
+/********************
+   IMAGES
+********************/
+img,
+picture {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  transition: 1s;
+}
+
+.border-img {
+  border: 1px solid black;
+}
+
+/********************
+    DIVIDER
+********************/
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: black;
+  height: 0.5px;
+  margin: clamp(0.9375rem, 0.8239rem + 0.5682vw, 2.1875rem) 0;
+}
+
+.divider {
+  font-size: clamp(0.875rem, 0.8523rem + 0.1136vw, 1.125rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.divider::after, .divider::before {
+  flex: 1;
+  content: "";
+  padding: 0.5px;
+  background-color: black;
+  margin: 3%;
+}
+
+.divider-left,
+.divider-right {
+  font-size: clamp(0.875rem, 0.8523rem + 0.1136vw, 1.125rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  transition: 300ms;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.divider-left::after {
+  flex: 1;
+  content: "";
+  padding: 0.5px;
+  background-color: black;
+  margin: 3%;
+}
+
+.divider-right::before {
+  flex: 1;
+  content: "";
+  padding: 0.5px;
+  background-color: black;
+  margin: 3%;
+}
+
+/********************
+    MAIN
+********************/
+.mobile {
+  display: none;
+}
+
+/********************
+      FORMS
+********************/
+form {
+  width: 100%;
+}
+form label {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+form input[type=text],
+form input[type=textarea] {
+  border: none;
+  border-bottom: 1px solid black;
+  margin: clamp(0.9375rem, 0.8239rem + 0.5682vw, 2.1875rem) 0;
+  width: 100%;
+}
+form input[type=textarea] {
+  min-height: 200px;
+}
+form input[type=submit] {
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 14px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.5s;
+}
+form input[type=submit]:hover {
+  background-color: #879487;
+  color: white;
+}
+
+/******************************
+ *  Header
+******************************/
 header {
+  align-items: center;
+  background-color: #e8e2dd;
+  border-bottom: 1px solid black;
   display: flex;
   flex-direction: row;
+  height: 70px;
+  padding: 0 5%;
+  justify-content: space-between;
 }
+header .custom-logo,
 header svg {
-  max-height: 50px;
+  cursor: pointer;
+  max-height: 55px;
   width: auto;
+}
+header a {
+  color: black;
+}
+header a:hover {
+  color: #879487;
+}
+header .text-logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.3125rem, 1.2273rem + 0.4261vw, 2.25rem);
+}
+header #headerNav {
+  background-color: white;
+  border-left: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+  overflow-x: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 1s;
+  width: 0;
+  z-index: 10;
+}
+header #headerNav div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(0.9375rem, 0.5966rem + 1.7045vw, 4.6875rem);
+}
+header #headerNav .left {
+  background-color: #e8e2dd;
+  border-right: 1px solid black;
+}
+header #headerNav .left a {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.1875rem, 2.017rem + 0.8523vw, 4.0625rem);
+  font-weight: 300;
+}
+header #headerNav .left .custom-logo {
+  max-height: 200px;
+  width: clamp(12.5rem, 10.2273rem + 11.3636vw, 37.5rem);
+}
+header #headerNav #closebtn {
+  max-height: 55px;
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  width: auto;
+}
+
+/********************
+    FOOTER
+********************/
+footer {
+  border-top: 1px solid black;
+  display: grid;
+  font-size: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  height: 70px;
+}
+footer div {
+  align-items: center;
+  background-color: #e8e2dd;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+}
+footer div:last-child {
+  border-right: none;
+}
+footer li {
+  text-align: right;
+}
+footer .list-center li {
+  text-align: center;
+}
+footer .list-center li a {
+  color: #879487;
+}
+footer .list-center li a:hover {
+  color: black;
+}
+footer a {
+  color: black;
+}
+footer a:hover {
+  color: #879487;
+}
+
+/********************
+    MAIN
+********************/
+main {
+  min-height: calc(100vh - 142px);
+}
+
+/********************
+    MAIN PAGES
+********************/
+.one-col {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 900px;
+  padding: clamp(0.9375rem, 0.5966rem + 1.7045vw, 4.6875rem);
+  gap: clamp(0.9375rem, 0.8239rem + 0.5682vw, 2.1875rem);
+}
+
+.wide {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5625rem, 1.4205rem + 0.7102vw, 3.125rem);
+  justify-content: center;
+  margin: auto;
+  max-width: 1600px;
+  padding: clamp(0.9375rem, 0.5966rem + 1.7045vw, 4.6875rem);
+}
+
+.two-col {
+  display: grid;
+  gap: clamp(1.5625rem, 1.4205rem + 0.7102vw, 3.125rem);
+  grid-template-columns: 1fr 2fr;
+  max-width: 1600px;
+  margin: auto;
+  padding: clamp(0.9375rem, 0.5966rem + 1.7045vw, 4.6875rem);
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  width: 100%;
+}
+
+.acf-map {
+  width: 100%;
+  height: 450px;
+  border: 1px solid black;
+}
+
+/********************
+      HOME
+********************/
+.home {
+  height: calc(100vh - 142px);
+}
+
+.swiper-cards {
+  width: 50%;
+}
+
+/********************
+      ARCHIVE
+********************/
+.archive-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(0.9375rem, 0.5966rem + 1.7045vw, 4.6875rem) 0;
+  row-gap: clamp(0.9375rem, 0.8239rem + 0.5682vw, 2.1875rem);
+}
+
+.archive-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(0.9375rem, 0.8239rem + 0.5682vw, 2.1875rem);
+}
+
+.archive-card {
+  align-items: center;
+  background-color: #e8e2dd;
+  border: 1px solid black;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 750px;
+  padding: 5%;
+  row-gap: 15px;
+  text-align: center;
+}
+.archive-card:hover {
+  background-color: #bcc6bc;
+}
+.archive-card:hover img {
+  filter: grayscale(1);
+}
+.archive-card img {
+  aspect-ratio: 1/1;
+  max-height: 635px;
+}
+.archive-card .info-title {
+  color: black;
+}
+.archive-card p {
+  margin: 0;
+  text-align: center;
+  width: 75%;
+}
+
+/********************
+      SINGLE
+********************/
+.inner-col {
+  columns: 2;
+  margin-bottom: 15px;
+}
+
+.sticky {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  text-align: right;
+  top: clamp(0.9375rem, 0.8239rem + 0.5682vw, 2.1875rem);
+}
+.sticky h1 {
+  line-height: 1;
+  margin-bottom: 15px;
+}
+.sticky h3 {
+  margin: 15px 0;
+}
+.sticky img {
+  aspect-ratio: 1/1;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: clamp(0.9375rem, 0.8239rem + 0.5682vw, 2.1875rem);
+}
+.gallery a img {
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  max-height: 500px;
+}
+.gallery a img:hover {
+  filter: grayscale(100%);
+}
+
+/********************
+      COMMENTS
+********************/
+.comment-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.comment-form-comment {
+  display: flex !important;
+  flex-direction: column;
+  width: 100%;
+}
+
+textarea {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.comment p {
+  margin: 3%;
+}
+
+/********************
+      NOTEBOOK
+********************/
+/*
+  @media only screen and (max-width: 1920px) {
+
+}
+*/
+/********************
+    TABLET
+********************/
+@media only screen and (max-width: 912px) {
+  footer div {
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    padding: 0 3%;
+  }
+  footer div:nth-child(3) {
+    border-left: none;
+  }
+  .divider {
+    width: 100%;
+  }
+  .two-col {
+    grid-template-columns: 100%;
+  }
+  .sticky {
+    display: grid;
+    gap: clamp(1.5625rem, 1.4205rem + 0.7102vw, 3.125rem);
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+  .sticky .left {
+    margin: auto;
+    width: 100%;
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: inline;
+  }
+  .swiper-cards {
+    width: 75%;
+  }
+}
+/********************
+      MOBILE
+  ********************/
+@media only screen and (max-width: 414px) {
+  .menu-overlay {
+    grid-template-columns: 100%;
+  }
+  .menu-overlay .left {
+    display: none;
+  }
+  .two-col-list,
+  .inner-col {
+    columns: 1;
+  }
+  .swiper-cards {
+    width: 100%;
+  }
+  .archive-row {
+    grid-template-columns: 100%;
+  }
+  .sticky {
+    grid-template-columns: 100%;
+    gap: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,13 +3,11 @@
 ********************/
 
 function openNav() {
-    document.getElementById("headerNav").style.cssText = "width:100%; opacity:100%";
-    document.getElementsByTagName("main").style.cssText = "opacity:0";
+    document.getElementById("headerNav").style.width = "100%";
 }
   
 function closeNav() {
-    document.getElementById("headerNav").style.cssText = "width:0%; opacity:0";
-    document.getElementsByTagName("main").style.cssText = "opacity:100%";
+    document.getElementById("headerNav").style.width = "0%";
 }
 
 /********************

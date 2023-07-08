@@ -25,9 +25,9 @@
         
 </head>
 
-<body>
-
-<?php body_class(); ?>
+<body
+    <?php body_class(); ?>  
+>
 
 <?php 
     if( function_exists( 'wp_body_open' ) ) {
@@ -37,44 +37,12 @@
 
     <header>
 
-        <div id="headerNav">
+        <?php get_template_part( 'template-parts/header/menu_overlay' ); ?>
 
-            <svg
-                onclick="closenav()"
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 100 100"
-            >
-                <path 
-                    d="M14.354.354 14 0 7.177 6.823.354 0 0 .354l6.823 6.823L0 14l.354.354L7.177 7.53 14 14.354l.354-.354L7.53 7.177 14.354.354z"
-                />
-            </svg>
-
-            <div class="left">
-                <?php if ( has_custom_logo() ) { 
-                    the_custom_logo(); 
-                    } else (
-                        bloginfo( 'name' )
-                    ) 
-                ?>
-            </div>
-
-            <div class="right">
-                <?php 
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'main-menu',
-                        ) 
-                    ); 
-                ?>
-            </div>
-
-        </div>
-
-        <?php if ( has_custom_logo() ) { 
-            the_custom_logo(); 
-            } else (
-                bloginfo( 'name' )
-            ) 
+        <?php 
+            if( function_exists( 'the_custom_logo' ) ) {
+                the_custom_logo();
+            }
         ?>
             
         <svg
